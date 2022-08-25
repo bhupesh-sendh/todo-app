@@ -13,8 +13,13 @@ function App(){
   const[user,setUser]=useState("")
   const onChange=e=>{ //e stands for each and every event
     setUser(e.target.value)
-
   }
+  const arr=["html","css","JS","ReactJS"]
+  // Array.map(    //Syntax of array.map function
+  //   (value,index)=><li>{value}</li>
+  // )
+
+ 
   useEffect(()=>console.log(count),[count])// after exeduting the below return only useEffect will work
   return(
     <div className='App'>
@@ -23,6 +28,13 @@ function App(){
       <input type="text" value={user} name="user" placeholder='Username' onChange={onChange} />
       <br></br>
       {user}
+      {
+      arr.map(
+        (value,index)=><li>{value}</li>
+      )
+      }  {/* //since its js code therefore have to enclose within {} */}
+      
+      
     </div>
   )
 }
