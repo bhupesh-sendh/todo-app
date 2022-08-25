@@ -14,7 +14,7 @@ class App extends Component{
   render(){
     return(
       <div className='App'>
-        <Display name={this.state.name} value={this.props.value}></Display>
+        <Display name={this.state.name} value={this.state.value}></Display>
         
       </div>
     )
@@ -25,7 +25,7 @@ class Display extends Component{
   render(){
     return(
       <div>
-        <h1>This is the Display Component</h1>
+        <h1 style={{backgroundColor:'blue'}}>This is the Display Component</h1>
         <h1>Welcome to {this.props.name}</h1>
         <p>This is {this.props.value}</p>
       </div>
