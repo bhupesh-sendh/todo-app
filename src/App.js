@@ -14,11 +14,24 @@ class App extends Component{
   render(){
     return(
       <div className='App'>
-        <h1>Welcome to this is it {this.state.name}</h1>
-        <p>This is {this.state.value}</p>
+        <Display name={this.state.name} value={this.props.value}></Display>
+        
       </div>
     )
   }
+}
+
+class Display extends Component{
+  render(){
+    return(
+      <div>
+        <h1>This is the Display Component</h1>
+        <h1>Welcome to {this.props.name}</h1>
+        <p>This is {this.props.value}</p>
+      </div>
+    )
+  }
+  
 }
 
 
