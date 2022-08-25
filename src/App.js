@@ -4,7 +4,8 @@ import React,{Component} from 'react';
 import Header from './Components/LearningComponents/Header'
 import Footer from './Components/LearningComponents/Footer'
 import Body from './Components/LearningComponents/Body'
-import Counter from './Components/Counter/Counter'
+//import Counter from './Components/Counter/Counter'
+import Button from 'react-bootstrap/Button';
 
 class App extends Component{
   state={
@@ -15,6 +16,7 @@ class App extends Component{
     return(
       <div className='App'>
         <Display name={this.state.name} value={this.state.value}></Display>
+        <button onClick={()=>console.log("clicked")}>CLICK HERE</button>
         
       </div>
     )
