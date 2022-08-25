@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React,{Component} from 'react';
+import React,{Component, useEffect} from 'react';
 import Header from './Components/LearningComponents/Header'
 import Footer from './Components/LearningComponents/Footer'
 import Body from './Components/LearningComponents/Body'
@@ -9,11 +9,12 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react'
 
 function App(){
-  const[name,setName]=useState("I am using SetState")
+  const[count,setcount]=useState(0)
+  useEffect(()=>console.log(count),[count])// after exeduting the below return only useEffect will work
   return(
     <div className='App'>
-      <h1>{name}</h1>
-      <button onClick={()=>setName("Changed the SetState")}>Click here</button>
+      <h1>{count}</h1>
+      <button onClick={()=>setcount(count+1)}>Click here</button>
     </div>
   )
 }
