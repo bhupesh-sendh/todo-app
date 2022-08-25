@@ -6,35 +6,47 @@ import Footer from './Components/LearningComponents/Footer'
 import Body from './Components/LearningComponents/Body'
 //import Counter from './Components/Counter/Counter'
 import Button from 'react-bootstrap/Button';
+import {useState} from 'react'
 
-class App extends Component{
-  state={
-    name:"React Js",
-    value:"States"
-  }
-  render(){
-    return(
-      <div className='App'>
-        <Display name={this.state.name} value={this.state.value}></Display>
-        <button onClick={()=>console.log("clicked")}>CLICK HERE</button>
+function App(){
+  const[name,setName]=useState("I am using SetState")
+  return(
+    <div className='App'>
+      <h1>{name}</h1>
+      <button onClick={()=>setName("Changed the SetState")}>Click here</button>
+    </div>
+  )
+}
+
+
+// class App extends Component{
+//   state={
+//     name:"React Js",
+//     value:"States"
+//   }
+//   render(){
+//     return(
+//       <div className='App'>
+//         <Display name={this.state.name} value={this.state.value}></Display>
+//         <button onClick={()=>console.log("clicked")}>CLICK HERE</button>
         
-      </div>
-    )
-  }
-}
+//       </div>
+//     )
+//   }
+// }
 
-class Display extends Component{
-  render(){
-    return(
-      <div>
-        <h1 style={{backgroundColor:'blue'}}>This is the Display Component</h1>
-        <h1>Welcome to {this.props.name}</h1>
-        <p>This is {this.props.value}</p>
-      </div>
-    )
-  }
+// class Display extends Component{
+//   render(){
+//     return(
+//       <div>
+//         <h1 style={{backgroundColor:'blue'}}>This is the Display Component</h1>
+//         <h1>Welcome to {this.props.name}</h1>
+//         <p>This is {this.props.value}</p>
+//       </div>
+//     )
+//   }
   
-}
+// }
 
 
 
