@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React,{Component, useEffect} from 'react';
+import React,{Component, useEffect, useReducer} from 'react';
 import Header from './Components/LearningComponents/Header'
 import Footer from './Components/LearningComponents/Footer'
 import Body from './Components/LearningComponents/Body'
@@ -10,11 +10,19 @@ import {useState} from 'react'
 
 function App(){
   const[count,setcount]=useState(0)
+  const[user,setUser]=useState("")
+  const onChange=e=>{ //e stands for each and every event
+    setUser(e.target.value)
+
+  }
   useEffect(()=>console.log(count),[count])// after exeduting the below return only useEffect will work
   return(
     <div className='App'>
       <h1>{count}</h1>
       <button onClick={()=>setcount(count+1)}>Click here</button>
+      <input type="text" value={user} name="user" placeholder='Username' onChange={onChange} />
+      <br></br>
+      {user}
     </div>
   )
 }
